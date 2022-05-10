@@ -31,9 +31,14 @@
           <groupId>com.google.code.gson</groupId>
           <artifactId>gson</artifactId>
           <version>2.9.0</version>
-        </dependency>    
-  
- 
+        </dependency>
+      <dependency>
+          <groupId>org.apache.httpcomponents</groupId>
+          <artifactId>httpcore</artifactId>
+          <version>4.4.11</version>
+      </dependency>
+
+
   </dependencies>
 
   <build>
@@ -80,5 +85,15 @@
         </plugin>
       </plugins>
     </pluginManagement>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <source>15</source>
+          <target>15</target>
+        </configuration>
+      </plugin>
+    </plugins>
   </build>
 </project>
