@@ -7,7 +7,7 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.*;
 
-public class HTMLGenerator { //deixar menor pra colocar lado a lado
+public class HTMLGenerator { //buscar jeitos de colocar um botao
 
     public void generate(PrintWriter writer, List<? extends Content> contentList, String company) {
         String div1 = """

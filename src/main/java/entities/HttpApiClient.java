@@ -11,12 +11,11 @@ import java.util.Locale;
 
 public class HttpApiClient implements APIClient {
 
-    public String getID(String companyName)
+    public String getID(String companyName, String apiKey)
     {
         String str = (companyName.replaceAll("\\s+","")).toLowerCase();
 
         try {
-            String apiKey = getApiKey(); // API Imdb
             URI apiIMDB = URI.create(String.format("https://imdb-api.com/en/API/SearchCompany/%s/%s", apiKey, str)); // Search by Company ID
 
             HttpClient client = HttpClient.newHttpClient();
@@ -30,10 +29,9 @@ public class HttpApiClient implements APIClient {
     }
 
 
-    public String getBody(String companyID) {
+    public String getBody(String companyID, String apiKey) {
 
         try {
-            String apiKey = getApiKey(); // API Imdb
             URI apiIMDB = URI.create(String.format("https://imdb-api.com/en/API/Company/%s/%s", apiKey, companyID)); // Search by Company
 
             HttpClient client = HttpClient.newHttpClient();
@@ -45,10 +43,4 @@ public class HttpApiClient implements APIClient {
             throw new RuntimeException(e);
         }
     }
-
-    public String getApiKey()
-    {
-        return "k_5djxoj5o";
-    }
-
 }
